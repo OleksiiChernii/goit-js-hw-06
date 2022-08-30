@@ -1,8 +1,6 @@
 const validationInput = document.querySelector('#validation-input');
 const dataLength = validationInput.getAttribute('data-length');
 
-console.log(dataLength)
-
 validationInput.addEventListener('blur', () => {
     (validationInput.value.length >= dataLength)
         ? validClasses(validationInput)

@@ -13,12 +13,8 @@ const images = [
   },
 ];
 
-const gallery = document.querySelector('.gallery');
+document.querySelector('.gallery').insertAdjacentHTML('beforeend', insertImages(images));
 
-images.forEach(img => {
-  gallery.insertAdjacentHTML('afterbegin', insertImage(img.url, img.alt));
-});
-
-function insertImage(src, alt) {
-  return `<li><image src='${src}' alt='${alt}'></image></li>`;
+function insertImages(imageArray) {
+  return images.map(img => `<li><image src='${img.url}' alt='${img.alt}'></image></li>`).join('');
 }
